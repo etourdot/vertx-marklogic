@@ -1,0 +1,12 @@
+= Marklogic Service
+
+A Vert.x service used to interact with Marklogic server instances from Vert.x applications.
+
+Please see the in source asciidoc documentation or the main documentation on the web-site for a full description
+of Marklogic service:
+
+* Web-site docs
+* link:src/main/asciidoc/java/index.adoc[Java in-source docs]
+* link:src/main/asciidoc/js/index.adoc[JavaScript in-source docs]
+* link:src/main/asciidoc/groovy/index.adoc[Groovy in-source docs]
+* link:src/main/asciidoc/ruby/index.adoc[Ruby in-source docs]

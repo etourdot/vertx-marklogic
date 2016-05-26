@@ -1,0 +1,6 @@
+HTTP/1.1 201 Created
+Location: /v1/documents?uri=/testHCEUKNXXWIAFDXBMVVYU/12680753763815786847.json
+Server: MarkLogic
+Content-Length: 0
+Connection: Keep-Alive
+Keep-Alive: timeout=5

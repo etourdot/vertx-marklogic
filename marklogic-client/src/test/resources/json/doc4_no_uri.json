@@ -1,0 +1,21 @@
+{
+  "content" : {
+    "foo" : "bar",
+    "num" : 123,
+    "big" : true,
+    "other" : {
+      "quux" : "flib",
+      "myarr" : [ "blah", true, 312 ]
+    }
+  },
+  "collections" : [ "coll/c1", "coll/c2" ],
+  "quality" : 2,
+  "properties" : {
+    "aProp1" : "aValue1",
+    "aProp2" : "aValue2"
+  },
+  "extension" : "json",
+  "directory" : "/testTTIRUBUIMNCSNEBCVQUG/",
+  "contentType" : "application/json",
+  "format" : null
+}

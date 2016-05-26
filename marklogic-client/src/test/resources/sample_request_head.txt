@@ -1,0 +1,6 @@
+HTTP/1.1 200 OK
+vnd.io.vertx.ext.marklogic.document-format: json
+Content-type: application/json; charset=utf-8
+Server: MarkLogic
+Connection: Keep-Alive
+Keep-Alive: timeout=5

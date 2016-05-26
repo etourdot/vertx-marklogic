@@ -1,0 +1,29 @@
+{
+  "content": {
+    "foo": "bar",
+    "num": 123,
+    "big": true,
+    "other": {
+      "quux": "flib",
+      "myarr": [
+        "blah",
+        true,
+        312
+      ]
+    }
+  },
+  "extension": "json",
+  "directory": "#DIRNAME#",
+  "contentType": "application/json",
+  "format" : "JSON",
+  "collections" : [ "coll/c1", "coll/c2" ],
+  "permissions" : [ {
+    "role-name" : "app-user",
+    "capabilities" : [ "update" ]
+  } ],
+  "quality" : 2,
+  "properties" : {
+    "aProp1" : "aValue1",
+    "aProp2" : "aValue2"
+  }
+}

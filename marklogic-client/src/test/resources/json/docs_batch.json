@@ -1,0 +1,131 @@
+{
+  "documents" : [ {
+    "uri" : "#DIRNAME#docs_batch1.json",
+    "contentType" : "application/json",
+    "content" : {
+      "name" : "Curb Appeal 1",
+      "description" : "Provides heatmap of income demographics for selected neighborhoods. Includes leaderboard for weekly orders on remodel materials including color schemes."
+    }
+  },
+  {
+    "uri" : "#DIRNAME#docs_batch2.json",
+    "contentType" : "application/json",
+    "content" : {
+      "name" : "Curb Appeal 2",
+      "description" : "Provides heatmap of income demographics for selected neighborhoods. Includes leaderboard for weekly orders on remodel materials including color schemes."
+    }
+  },
+    {
+      "uri" : "#DIRNAME#docs_batch3.json",
+      "contentType" : "application/json",
+      "content" : {
+        "name" : "Curb Appeal 3",
+        "description" : "Provides heatmap of income demographics for selected neighborhoods. Includes leaderboard for weekly orders on remodel materials including color schemes."
+      }
+    },
+    {
+      "uri" : "#DIRNAME#docs_batch4.json",
+      "contentType" : "application/json",
+      "content" : {
+        "name" : "Curb Appeal 4",
+        "description" : "Provides heatmap of income demographics for selected neighborhoods. Includes leaderboard for weekly orders on remodel materials including color schemes."
+      }
+    },
+    {
+      "uri" : "#DIRNAME#docs_batch5.json",
+      "contentType" : "application/json",
+      "content" : {
+        "name" : "Curb Appeal 5",
+        "description" : "Provides heatmap of income demographics for selected neighborhoods. Includes leaderboard for weekly orders on remodel materials including color schemes."
+      }
+    },
+    {
+      "uri" : "#DIRNAME#docs_batch6.json",
+      "contentType" : "application/json",
+      "content" : {
+        "name" : "Curb Appeal 6",
+        "description" : "Provides heatmap of income demographics for selected neighborhoods. Includes leaderboard for weekly orders on remodel materials including color schemes."
+      }
+    },
+    {
+      "uri" : "#DIRNAME#docs_batch7.json",
+      "contentType" : "application/json",
+      "content" : {
+        "name" : "Curb Appeal 7",
+        "description" : "Provides heatmap of income demographics for selected neighborhoods. Includes leaderboard for weekly orders on remodel materials including color schemes."
+      }
+    },
+    {
+      "uri" : "#DIRNAME#docs_batch8.json",
+      "contentType" : "application/json",
+      "content" : {
+        "name" : "Curb Appeal 8",
+        "description" : "Provides heatmap of income demographics for selected neighborhoods. Includes leaderboard for weekly orders on remodel materials including color schemes."
+      }
+    },
+    {
+      "uri" : "#DIRNAME#docs_batch9.json",
+      "contentType" : "application/json",
+      "content" : {
+        "name" : "Curb Appeal 9",
+        "description" : "Provides heatmap of income demographics for selected neighborhoods. Includes leaderboard for weekly orders on remodel materials including color schemes."
+      }
+    },
+    {
+      "uri" : "#DIRNAME#docs_batch10.json",
+      "contentType" : "application/json",
+      "content" : {
+        "name" : "Curb Appeal 10",
+        "description" : "Provides heatmap of income demographics for selected neighborhoods. Includes leaderboard for weekly orders on remodel materials including color schemes."
+      }
+    },
+    {
+      "uri" : "#DIRNAME#docs_batch11.json",
+      "contentType" : "application/json",
+      "content" : {
+        "name" : "Curb Appeal 11",
+        "description" : "Provides heatmap of income demographics for selected neighborhoods. Includes leaderboard for weekly orders on remodel materials including color schemes."
+      }
+    },
+    {
+      "uri" : "#DIRNAME#docs_batch12.json",
+      "contentType" : "application/json",
+      "content" : {
+        "name" : "Curb Appeal 12",
+        "description" : "Provides heatmap of income demographics for selected neighborhoods. Includes leaderboard for weekly orders on remodel materials including color schemes."
+      }
+    },
+    {
+      "uri" : "#DIRNAME#docs_batch13.json",
+      "contentType" : "application/json",
+      "content" : {
+        "name" : "Curb Appeal 13",
+        "description" : "Provides heatmap of income demographics for selected neighborhoods. Includes leaderboard for weekly orders on remodel materials including color schemes."
+      }
+    },
+    {
+      "uri" : "#DIRNAME#docs_batch14.json",
+      "contentType" : "application/json",
+      "content" : {
+        "name" : "Curb Appeal 14",
+        "description" : "Provides heatmap of income demographics for selected neighborhoods. Includes leaderboard for weekly orders on remodel materials including color schemes."
+      }
+    },
+    {
+      "uri" : "#DIRNAME#docs_batch15.json",
+      "contentType" : "application/json",
+      "content" : {
+        "name" : "Curb Appeal 15",
+        "description" : "Provides heatmap of income demographics for selected neighborhoods. Includes leaderboard for weekly orders on remodel materials including color schemes."
+      }
+    },
+    {
+      "uri" : "#DIRNAME#docs_batch16.json",
+      "contentType" : "application/json",
+      "content" : {
+        "name" : "Curb Appeal 16",
+        "description" : "Provides heatmap of income demographics for selected neighborhoods. Includes leaderboard for weekly orders on remodel materials including color schemes."
+      }
+    }
+  ]
+}

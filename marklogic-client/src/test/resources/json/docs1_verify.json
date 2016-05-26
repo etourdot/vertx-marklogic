@@ -1,0 +1,45 @@
+{
+  "documents" : [ {
+    "uri" : "#DIRNAME#docs1_1.json",
+    "content" : {
+      "foo" : "bar",
+      "num" : 123,
+      "big" : true,
+      "other" : {
+        "quux" : "flib",
+        "myarr" : [ "blah", true, 312 ]
+      },
+      "name": "Curb Appeal",
+      "industry": "Real Estate",
+      "description": "Provides heatmap of income demographics for selected neighborhoods. Includes leaderboard for weekly orders on remodel materials including color schemes."
+    },
+    "contentType" : "application/json",
+    "format" : "JSON"
+  }, {
+    "uri" : "#DIRNAME#docs1_2.json",
+    "content" : {
+      "foo" : "bar",
+      "num" : 123,
+      "big" : true,
+      "other" : {
+        "quux" : "flib",
+        "myarr" : [ "blah", true, 312 ]
+      },
+      "name": "Flipper",
+      "industry": "Real Estate",
+      "description": "Discovers correlations and trending criteria. Finds neighborhoods matching specified criteria. Sends alert when a property qualifies for criteria."
+    },
+    "collections" : [ "coll/c1", "coll/c2" ],
+    "permissions" : [ {
+      "role-name" : "app-user",
+      "capabilities" : [ "update" ]
+    } ],
+    "quality" : 2,
+    "properties" : {
+      "aProp1" : "aValue1",
+      "aProp2" : "aValue2"
+    },
+    "contentType" : "application/json",
+    "format" : "JSON"
+  } ]
+}

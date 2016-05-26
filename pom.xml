@@ -1,0 +1,170 @@
+<?xml version="1.0"?>
+<!--
+  ~ Copyright (C) 2015 - 2016 Emmanuel Tourdot
+  ~
+  ~ See the NOTICE file distributed with this work for additional information regarding copyright ownership.
+  ~ This is free software: you can redistribute it and/or modify it under the terms of the GNU Lesser
+  ~ General Public License as published by the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ This software is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even
+  ~ the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+  ~ See the GNU Lesser General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU Lesser General Public License along with this software.
+  ~ If not, see <http://www.gnu.org/licenses/>.
+  ~
+  -->
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>io.vertx</groupId>
+    <artifactId>vertx-ext-parent</artifactId>
+    <version>19</version>
+  </parent>
+
+  <inceptionYear>2015</inceptionYear>
+
+  <developers>
+    <developer>
+      <id>etourdot</id>
+      <name>Emmanuel Tourdot</name>
+      <email>emmanuel.tourdot@gmail.com</email>
+      <roles>
+        <role>owner</role>
+        <role>developer</role>
+      </roles>
+    </developer>
+  </developers>
+
+  <licenses>
+    <license>
+      <name>LGPL 3.0 license</name>
+      <url>http://www.opensource.org/licenses/lgpl-3.0.html</url>
+    </license>
+  </licenses>
+
+  <groupId>org.etourdot.vertx</groupId>
+  <artifactId>marklogic-parent</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
+
+  <properties>
+    <stack.version>3.2.1</stack.version>
+    <marklogic-api.version>3.0.4</marklogic-api.version>
+    <junit.version>4.12</junit.version>
+    <doc.skip>true</doc.skip>
+    <asciidoc.dir>src/main/asciidoc</asciidoc.dir>
+  </properties>
+
+  <modules>
+    <module>marklogic-api</module>
+    <module>marklogic-client</module>
+    <module>marklogic-service</module>
+  </modules>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>io.vertx</groupId>
+        <artifactId>vertx-dependencies</artifactId>
+        <version>${stack.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.marklogic</groupId>
+        <artifactId>java-client-api</artifactId>
+        <version>${marklogic-api.version}</version>
+        <scope>test</scope>
+      </dependency>
+      <dependency>
+        <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+        <scope>test</scope>
+        <version>${junit.version}</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <dependencies>
+    <dependency>
+      <groupId>io.vertx</groupId>
+      <artifactId>vertx-lang-groovy</artifactId>
+      <optional>true</optional>
+    </dependency>
+    <dependency>
+      <groupId>io.vertx</groupId>
+      <artifactId>vertx-lang-ruby</artifactId>
+      <optional>true</optional>
+    </dependency>
+    <dependency>
+      <groupId>io.vertx</groupId>
+      <artifactId>vertx-lang-js</artifactId>
+      <optional>true</optional>
+    </dependency>
+    <dependency>
+      <groupId>io.vertx</groupId>
+      <artifactId>vertx-rx-java</artifactId>
+      <optional>true</optional>
+    </dependency>
+    <dependency>
+      <groupId>io.vertx</groupId>
+      <artifactId>vertx-codegen</artifactId>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.vertx</groupId>
+      <artifactId>vertx-docgen</artifactId>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.vertx</groupId>
+      <artifactId>vertx-codetrans</artifactId>
+      <scope>provided</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-javadoc-plugin</artifactId>
+          <configuration>
+            <sourceFileExcludes>
+              <sourceFileExclude>**/package-info.java</sourceFileExclude>
+              <sourceFileExclude>**/impl/**</sourceFileExclude>
+            </sourceFileExcludes>
+            <sourceFileIncludes>
+              <sourceFileInclude>org/etourdot/vertx/**/*.java</sourceFileInclude>
+            </sourceFileIncludes>
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+    <!--plugins>
+      <plugin>
+        <artifactId>maven-assembly-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>assemble-docs</id>
+            <phase>package</phase>
+            <goals>
+              <goal>single</goal>
+            </goals>
+            <configuration>
+              <attach>true</attach>
+              <descriptors>
+                <descriptor>src/main/assembly/docs.xml</descriptor>
+              </descriptors>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins-->
+  </build>
+</project>

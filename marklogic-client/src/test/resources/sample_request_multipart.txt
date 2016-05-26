@@ -1,0 +1,22 @@
+HTTP/1.1 200 OK
+vnd.io.vertx.ext.marklogic.document-format: json
+Content-type: multipart/mixed; boundary=ML_BOUNDARY_6671714710956939675
+Server: MarkLogic
+Content-Length: 842
+Connection: Keep-Alive
+Keep-Alive: timeout=5
+
+--ML_BOUNDARY_6671714710956939675
+Content-Type: application/json
+Content-Disposition: attachment; filename="/testMBUUHNNFUPHHWLTCQQHT/10253187248841549109.json"; category=metadata; format=json
+Content-Length: 275
+
+{"collections":["coll/c1","coll/c2"],"permissions":[{"role-name":"app-user","capabilities":["update"]},{"role-name":"rest-writer","capabilities":["update"]},{"role-name":"rest-reader","capabilities":["read"]}],"properties":{"aProp2":"aValue2","aProp1":"aValue1"},"quality":2}
+--ML_BOUNDARY_6671714710956939675
+Content-Type: application/json
+Content-Disposition: attachment; filename="/testMBUUHNNFUPHHWLTCQQHT/10253187248841549109.json"; category=content; format=json
+Content-Length: 90
+
+{"foo":"bar", "num":123, "big":true, "other":{"quux":"flib", "myarr":["blah", true, 312]}}
+--ML_BOUNDARY_6671714710956939675--
+

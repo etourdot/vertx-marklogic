@@ -1,0 +1,4 @@
+{
+  "role-name" : "app-user",
+  "capabilities" : [ "UPDATE", "READ" ]
+}

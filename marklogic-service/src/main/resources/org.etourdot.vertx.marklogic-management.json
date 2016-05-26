@@ -1,0 +1,13 @@
+{
+  "main": "org.etourdot.vertx.marklogic.management.MarkLogicManagementVerticle",
+  "options": {
+    "worker": false,
+    "multiThreaded": false,
+    "config": {
+      "host": "localhost",
+      "port": 8002,
+      "user": "admin",
+      "password": "admin"
+    }
+  }
+}

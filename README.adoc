@@ -1,12 +1,203 @@
-= Marklogic Service
+= MarkLogic Client for Vert.X
 
-A Vert.x service used to interact with Marklogic server instances from Vert.x applications.
+A Vert.x client allowing applications to interact with a Marklogic server
 
-Please see the in source asciidoc documentation or the main documentation on the web-site for a full description
-of Marklogic service:
+# Getting Started
 
-* Web-site docs
-* link:src/main/asciidoc/java/index.adoc[Java in-source docs]
-* link:src/main/asciidoc/js/index.adoc[JavaScript in-source docs]
-* link:src/main/asciidoc/groovy/index.adoc[Groovy in-source docs]
-* link:src/main/asciidoc/ruby/index.adoc[Ruby in-source docs]
+## Maven
+
+Add the following dependency to your maven projeect
+
+[source,xml]
+----
+<dependencies>
+  <dependency>
+    <groupId>org.etourdot.vertx</groupId>
+    <artifactId>vertx-marklogic-client</artifactId>
+    <version>$version</version>
+  </dependency>
+</dependencies>
+----
+
+## Gradle
+
+Add the following dependency to your gradle project
+
+[source,groovy]
+----
+dependencies {
+  compile("org.etourdot.vertx:vertx-marklogic-client:$version")
+}
+----
+
+## Create a client
+
+You can create a CRUD client instance as follows:
+
+[source,java]
+----
+MarkLogicClient client = MarkLogicClient.create(vertx, config);
+----
+
+Management operations are separate from CRUD operations.
+You can create a management client instance as follows:
+
+[source,java]
+----
+MarkLogicManagement management = MarkLogicManagement.create(vertx, config);
+----
+
+# CRUD Operations
+
+Following are some examples of the operations supported by MarkLogicClient.
+Consult javadoc/documentation for more details.
+
+## Insert one document
+
+Will insert a document into Marklogic database.
+
+[source,java]
+----
+// Document content in json
+JsonObject documentContent = new JsonObject().put("title", "The Hobbit");
+// Fix uri for document 1
+Document document = Document.create().uri("/json/documents/exemple1.json").content(documentContent);
+// And save it
+markLogicClient.save(document.toJson(), res -> {
+  if (res.succeeded()) {
+    System.out.println("Saved book with id " + res.result().getString(0));
+  } else {
+    res.cause().printStackTrace();
+  }
+});
+
+----
+
+## Insert multiple documents
+
+Will insert somes documents into Marklogic database in one call.
+
+Of course Marklogic Vert.X client doesn't call multiple save command, it calls multipart marklogic rest command.
+
+[source,java]
+----
+// Document content in json
+JsonObject documentContent1 = new JsonObject().put("title", "The Hobbit");
+JsonObject documentContent2 = new JsonObject().put("title", "The Two Towers");
+// Fix uri for document 1
+Document document1 = Document.create().uri("/json/documents/exemple1.json").content(documentContent1);
+// Uri will be created by Marklogic for document 2, so fix directory and extension only
+Document document2 = Document.create().directory("/json/documents/").extension(".json")
+  .content(documentContent2);
+// Populate documents
+Documents documents = Documents.create().addDocuments(document1, document2);
+// And save them
+markLogicClient.save(documents.toJson(), res -> {
+  if (res.succeeded()) {
+    System.out.println("Saved book with id " + res.result().getString(0));
+    System.out.println("Saved book with id " + res.result().getString(1));
+  } else {
+    res.cause().printStackTrace();
+  }
+});
+----
+
+## Read a document
+
+Will read a document from the database.
+
+[source,java]
+----
+markLogicClient.read("/json/documents/exemple1.json", res -> {
+  if (res.succeeded()) {
+    System.out.println("Document: " + res.result());
+  } else {
+    res.cause().printStackTrace();
+  }
+});
+----
+
+## Read some documents
+
+Will read some documents from the database.
+
+[source,java]
+----
+String[] uris = new String[] {
+  "/json/documents/exemple1.json",
+  "/json/documents/exemple2.json"};
+markLogicClient.readMany(new JsonArray(Arrays.asList(uris)), res -> {
+  if (res.succeeded()) {
+    JsonArray docs = res.result()
+    System.out.println("Document 1: " + docs[0]);
+    System.out.println("Document 2: " + docs[1]);
+  } else {
+    res.cause().printStackTrace();
+  }
+}));
+----
+
+## Delete a document
+
+Will delete a document onto database.
+
+[source,java]
+----
+markLogicClient.delete("/json/documents/exemple1.json", res -> {
+  if (res.succeeded()) {
+    System.out.println("Document deleted");
+  } else {
+    res.cause().printStackTrace();
+  }
+});
+----
+
+## Search documents
+
+Will search some documents.
+
+[source,java]
+----
+SearchOptions searchOptions = new SearchOptions();
+searchOptions.pageLen(5L);
+searchOptions.directory("/json/documents/");
+searchOptions.expression("neighborhoods AND correlations");
+markLogicClient.searchDocuments(searchOptions, res -> {
+ if (res.succeeded()) {
+   JsonArray documents = res.result();
+   System.out.println("Found " + documents.size() + " documents);
+ } else {
+   res.cause().printStackTrace();
+ }
+});
+
+----
+
+# Management Operations
+
+Following are some examples of the operations supported by MarkLogicManagement.
+
+Consult javadoc/documentation for more details.
+
+## Database operations
+
+## Forest operations
+
+## Host operations
+
+
+# Running the tests
+
+You will need to have MarkLogic server installed and running.
+
+To run tests on MarkLogicClient, you will need to create a http server on your host
+and a user with rest rights (rest-reader and rest-writer writes).
+
+It is better to create a database instance specific for this tests.
+Tests will create, search and destroy documents, directories and collections onto this database.
+
+MarkLogicManagement tests using http server on port 8002 which is default manage port on marklogic instance.
+
+Of course it is recommended to execute management test on a specific server because this tests
+will cause marklogic server reboots due to http server creations and suppressions.
+
